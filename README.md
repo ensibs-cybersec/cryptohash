@@ -12,13 +12,19 @@ Easiest way to run the application is to start a Docker container:
     docker build -t cryptohash .
     docker run -d -p 5000:5000 -e STARTSALT=RandomSaltToPrefixPassword -e ENDSALT=RandomSaltToSuffixPassword cryptohash
 
-The application is then available under 
+The application is then available using a browser or a tool like Postman
+
 > http://localhost:5000/hash (POST)
+
+This call generates a cryptographic hash corresponding to the body sent to the API.
+
 > http://localhost:5000/saltedhash (POST)
+
+This call generates a cryptographic hash corresponding to the body sent to the API, using the salt.
+
 > http://localhost:5000/generate (GET)
 
-The first two calls generate a cryptographic hash corresponding to the body sent to the API, with or without using the salt.
-The third call gives a sample list of well-known hash values, to be completed as an exercise for the students.
+This call gives a sample list of well-known hash values, to be completed as an exercise for the students. The result is output as a JSON content.
 
 ## Notes
 One can check the corresponding result, and even try and revert the hash, by using a site like https://md5hashing.net
